@@ -1,0 +1,253 @@
+import java.util.Arrays;
+
+public class PodstawyJava {
+
+    public static void main(String[] args) {
+
+        // ========================
+        // 1. WYPISYWANIE TEKSTU
+        // ========================
+
+        System.out.println("Hello world");
+        System.out.print("Uczę się ");
+        System.out.print("Javy\n");
+
+        String imie = "Adam";
+        int wiek = 20;
+
+        // printf – formatowane wypisywanie
+        System.out.printf("Mam na imię %s i mam %d lat\n", imie, wiek);
+
+        /*
+        ĆWICZENIE 1
+        Wypisz tekst trzema sposobami:
+        - println
+        - print
+        - printf
+
+        Tekst:
+        "Java jest"
+        */
+
+
+        // ========================
+        // 2. ZMIENNE
+        // ========================
+
+        int liczba = 10;
+        double cena = 19.99;
+        char litera = 'A';
+        boolean aktywny = true;
+        String miasto = "Łódź";
+
+        System.out.println(liczba);
+        System.out.println(cena);
+        System.out.println(litera);
+        System.out.println(aktywny);
+        System.out.println(miasto);
+
+        /*
+        ĆWICZENIE 2
+        Utwórz zmienne:
+        - imie
+        - wiek
+        - wzrost
+
+        Wypisz je w jednym zdaniu.
+        */
+
+
+        // ========================
+        // 3. OPERACJE MATEMATYCZNE
+        // ========================
+
+        int a = 12;
+        int b = 4;
+
+        System.out.println("Suma = " + (a + b));
+        System.out.println("Różnica = " + (a - b));
+        System.out.println("Iloczyn = " + (a * b));
+        System.out.println("Iloraz = " + (a / b));
+
+        /*
+        ĆWICZENIE 3
+        Utwórz dwie liczby i wypisz:
+        - dodawanie
+        - odejmowanie
+        - mnożenie
+        - dzielenie
+        */
+
+
+        // ========================
+        // 4. IF / ELSE
+        // ========================
+
+        int liczbaTest = -5;
+
+        if (liczbaTest > 0) {
+            System.out.println("Dodatnia");
+        } else if (liczbaTest < 0) {
+            System.out.println("Ujemna");
+        } else {
+            System.out.println("Zero");
+        }
+
+        /*
+        ĆWICZENIE 4
+        Utwórz zmienną "wiek".
+
+        Jeśli wiek >= 18
+        wypisz "Pełnoletni"
+
+        w przeciwnym razie
+        wypisz "Niepełnoletni"
+        */
+
+
+        // ========================
+        // 5. PĘTLA FOR
+        // ========================
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+
+        /*
+        ĆWICZENIE 5
+        Wypisz liczby od 1 do 10 używając pętli for.
+        */
+
+
+        // ========================
+        // 6. PĘTLA WHILE
+        // ========================
+
+        int i = 1;
+
+        while (i <= 5) {
+            System.out.println(i);
+            i++;
+        }
+
+        /*
+        ĆWICZENIE 6
+        Wypisz liczby od 10 do 1 używając pętli while.
+        */
+
+        // ========================
+        // 7. PĘTLA DO-WHILE
+        // ========================
+        
+        int licznik = 1;
+        
+        do {
+            System.out.println("Liczba: " + licznik);
+            licznik++;
+        } while (licznik <= 5);
+        
+        /*
+        ĆWICZENIE 7
+        Wypisz liczby od 1 do 10 używając do-while
+        */
+
+        // ========================
+        // 8. TABLICE
+        // ========================
+
+        int[] liczby = {10, 20, 30, 40, 50};
+
+        // --- SPOSÓB 1: klasyczna pętla for
+
+        for (int j = 0; j < liczby.length; j++) {
+            System.out.println(liczby[j]);
+        }
+
+        // --- SPOSÓB 2: pętla foreach
+
+        for (int element : liczby) {
+            System.out.println(element);
+        }
+
+        // ========================
+        // 9. TABLICE 2 WYMIAROWE
+        // ========================
+        
+        int[][] macierz = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        
+        for (int wiersz = 0; wiersz < macierz.length; wiersz++) {
+            for (int kolumna = 0; kolumna < macierz[wiersz].length; kolumna++) {
+                System.out.print(macierz[wiersz][kolumna] + " ");
+            }
+            System.out.println();
+        }
+        
+        /*
+        ĆWICZENIE 9
+        Policz sumę wszystkich elementów tablicy.
+        */
+       
+
+        // ========================
+        // 10. LOSOWANIE LICZBY
+        // ========================
+
+        int losowa = (int) (Math.random() * 10);
+
+        System.out.println("Losowa liczba: " + losowa);
+
+        /*
+        ĆWICZENIE 10
+        Wylosuj liczbę od 1 do 100 i sprawdź:
+        - czy jest parzysta
+        - czy jest nieparzysta
+        */
+        
+        // ========================
+        // 11. LOSOWANIE LICZB (Random)
+        // ========================
+        
+        import java.util.Random;
+        
+        Random random = new Random();
+        
+        int liczbaLosowa = random.nextInt(100) + 1; // 1-100
+        
+        System.out.println("Wylosowana liczba: " + liczbaLosowa);
+        
+        /*
+        ĆWICZENIE 11
+        Wylosuj liczbę od 1 do 50
+        i sprawdź czy jest większa od 25
+        */
+        
+        // ========================
+        // 12. METODY MATEMATYCZNE
+        // ========================
+        
+        int liczba1 = -10;
+        
+        System.out.println("Wartość bezwzględna: " + Math.abs(liczba1));
+        System.out.println("Pierwiastek: " + Math.sqrt(25));
+        System.out.println("Potęga: " + Math.pow(2, 3));
+        System.out.println("Maksimum: " + Math.max(10, 20));
+        System.out.println("Minimum: " + Math.min(10, 20));
+        System.out.println("Zaokrąglenie: " + Math.round(4.6));
+        
+        
+        // ========================
+        // 13. WŁASNE METODY
+        // ========================
+        
+        public static int dodaj(int a, int b) {
+            return a + b;
+        }
+        
+        int wynik = dodaj(5, 7);
+        System.out.println("Wynik = " + wynik);
+    }
+}
